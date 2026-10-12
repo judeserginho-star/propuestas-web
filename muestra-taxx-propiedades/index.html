@@ -99,6 +99,28 @@ body.muestra .nav{top:44px}body.muestra .hero.split,body.muestra .hero.editorial
 .mapa{width:100%;height:420px;border:0;border-radius:24px;filter:grayscale(.9) invert(.92) contrast(.9)}
 .pie{padding:50px 0 120px;border-top:1px solid var(--linea);color:var(--muted);font-size:14px}.pie .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}.pie .marca{color:var(--fg)}.cred a{color:var(--p);font-weight:600}
 .fab{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--p);color:var(--sp);box-shadow:0 16px 40px -10px var(--p)}.fab .ico{width:26px;height:26px}
+/* REPOSTERÍA PREMIUM: tarjeta 3D, sello giratorio, chispas */
+.mono.logo{object-fit:cover;padding:0;background:none}
+.hero.prod{padding:150px 0 100px;min-height:100svh;display:flex;align-items:center}
+.claims{list-style:none;padding:0;margin:34px 0 0;display:flex;flex-wrap:wrap;gap:10px}.claims li{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--card);border:1px solid var(--linea);font-weight:600;font-size:14px}.claims .ico{width:17px;height:17px;color:var(--p)}
+.prod-stage{position:relative;perspective:1200px;min-height:560px;display:grid;place-items:center}
+.prod-card{position:relative;width:min(420px,78vw);aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;box-shadow:0 50px 90px -35px rgba(184,40,94,.55),0 0 0 10px rgba(255,255,255,.7);transform-style:preserve-3d;transform:rotate(-3deg);will-change:transform}
+.prod-card img{width:100%;height:115%;object-fit:cover}
+.prod-card.mini{position:absolute;width:min(190px,36vw);right:-4%;bottom:4%;transform:rotate(7deg);box-shadow:0 30px 60px -25px rgba(74,42,31,.5),0 0 0 7px #fff;z-index:2}
+.sello{position:absolute;left:-3%;top:2%;width:156px;height:156px;z-index:5;display:grid;place-items:center;border-radius:50%;background:var(--bg);box-shadow:0 20px 50px -18px rgba(184,40,94,.55);transform:translateZ(120px)}
+.sello svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:girar 16s linear infinite}.sello text{font:700 15.5px var(--fx);letter-spacing:.18em;fill:var(--p2);text-transform:uppercase}
+.sello img{width:74px;height:74px;border-radius:50%;object-fit:cover;box-shadow:0 10px 30px -10px rgba(184,40,94,.6)}@keyframes girar{to{transform:rotate(360deg)}}
+.chispa{position:absolute;transform:translateZ(90px);width:18px;height:22px;background:radial-gradient(circle at 35% 30%,#8a5a44,#4A2A1F 70%);border-radius:50% 50% 46% 46%/60% 60% 40% 40%;z-index:4;animation:bob 5s ease-in-out infinite}
+.chispa.c1{top:16%;right:6%}.chispa.c2{bottom:24%;left:4%;width:14px;height:17px;animation-delay:-1.5s}.chispa.c3{top:52%;right:-2%;width:12px;height:15px;animation-delay:-3s}.chispa.c4{bottom:6%;left:34%;width:16px;height:19px;animation-delay:-2.2s}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;perspective:1400px}
+.pcard{background:var(--card);border:1px solid var(--linea);border-radius:30px;overflow:hidden;transform-style:preserve-3d;transition:box-shadow .35s;will-change:transform}.pcard:hover{box-shadow:0 40px 80px -35px rgba(184,40,94,.45)}
+.pimg{position:relative;aspect-ratio:4/3;overflow:hidden}.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}.pcard:hover .pimg img{transform:scale(1.08)}
+.tag{position:absolute;top:16px;left:16px;padding:7px 14px;border-radius:999px;background:var(--ac);color:#3d2a00;font:700 13px var(--fx);letter-spacing:.06em;text-transform:uppercase}
+.pbody{padding:28px 30px 30px}.pbody h3{font:700 28px/1.15 var(--ft);margin:0 0 8px}.pbody p{color:var(--muted);margin:0 0 16px}
+.pills{list-style:none;padding:0;margin:0 0 22px;display:flex;flex-wrap:wrap;gap:8px}.pills li{padding:6px 12px;border-radius:999px;background:color-mix(in srgb,var(--p) 10%,transparent);color:var(--p2);font:600 13px var(--fx)}
+.pfoot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.precio{display:block;font:800 30px var(--ft);color:var(--fg)}.precio.consulta{font-size:18px;color:var(--muted)}.pfoot small{color:var(--muted);font-size:13px}
+.contact-cta{border-radius:var(--r);overflow:hidden;aspect-ratio:1/1;max-width:440px;justify-self:center;box-shadow:0 40px 80px -35px rgba(184,40,94,.5)}.contact-cta img{width:100%;height:100%;object-fit:cover}
+@media (max-width:960px){.hero.prod .prod-stage{order:-1;margin-bottom:6px}.hero.prod .hero-grid{gap:28px}.prod-card{width:min(340px,74vw)}.prod-stage{min-height:auto;padding:30px 0 10px}.sello{width:118px;height:118px;left:0}.sello img{width:58px;height:58px}.hero.prod{padding-top:130px}}
 /* ESTADOS INICIALES (solo con JS y sin "reducir movimiento") */
 .js .rv,.js .st{opacity:0;transform:translateY(26px);filter:blur(6px)}.js .titular .w>span{transform:translateY(105%);filter:blur(10px);opacity:0}.js .reveal-img{clip-path:inset(12% 8% 12% 8% round var(--r))}
 /* RESPONSIVE */
@@ -132,6 +154,11 @@ function ready(){
   // parallax suave en fotos
   gsap.utils.toArray('.par').forEach(im=>gsap.fromTo(im,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:im.parentElement,scrub:true}}));
   gsap.to('.hero.full .bgimg',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.hero.full',start:'top top',end:'bottom top',scrub:true}});
+  // tarjetas 3D que se inclinan siguiendo el mouse (tipo 21st "3D card")
+  if(matchMedia('(pointer:fine)').matches){document.querySelectorAll('.tilt').forEach(c=>{c.addEventListener('pointermove',ev=>{const r=c.getBoundingClientRect(),x=(ev.clientX-r.left)/r.width-.5,y=(ev.clientY-r.top)/r.height-.5;gsap.to(c,{rotateY:x*16,rotateX:-y*16,duration:.5,ease:'power3.out',transformPerspective:900})});c.addEventListener('pointerleave',()=>gsap.to(c,{rotateY:0,rotateX:0,duration:.9,ease:'elastic.out(1,.5)'}))})}
+  // la tarjeta del producto gira suave al scrollear
+  gsap.to('.hero.prod .prod-card:not(.mini)',{rotate:3,yPercent:-6,ease:'none',scrollTrigger:{trigger:'.hero.prod',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero.prod .prod-card.mini',{rotate:-4,yPercent:-30,ease:'none',scrollTrigger:{trigger:'.hero.prod',start:'top top',end:'bottom top',scrub:true}});
   // botones magnéticos (solo con mouse)
   if(matchMedia('(pointer:fine)').matches){document.querySelectorAll('.mag').forEach(b=>{b.addEventListener('pointermove',ev=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(ev.clientX-r.left-r.width/2)*.25,y:(ev.clientY-r.top-r.height/2)*.35,duration:.4,ease:'power3.out'})});b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}))})}
 }
@@ -200,11 +227,12 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',rea
     <ul class="dat stagger"><li class="st"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /> </svg>Av. Luis María Campos 1381, Palermo, CABA</li>
       <li class="st"><a href="tel:+541147867644"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /> </svg>+54 11 4786-7644</a></li><li class="st"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /> </svg>Consultá nuestros horarios</li></ul>
     <a class="btn btn-g" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Taxx%20Propiedades%2C%20Av.%20Luis%20Mar%C3%ADa%20Campos%201381%2C%20Palermo%2C%20CABA"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <polygon points="3 11 22 2 13 21 11 13 3 11" /> </svg> Cómo llegar</a></div>
+  
   <iframe class="mapa reveal-img" loading="lazy" title="Mapa" src="https://www.google.com/maps?q=Taxx%20Propiedades%2C%20Av.%20Luis%20Mar%C3%ADa%20Campos%201381%2C%20Palermo%2C%20CABA&output=embed"></iframe>
 </div></section></main>
 <footer class="pie"><div class="wrap">
   <div class="marca"><span class="mono">T</span><span>Taxx Propiedades</span></div>
-  <p>© 2026 Taxx Propiedades · Av. Luis María Campos 1381, Palermo</p>
+  <p>© 2026 Taxx Propiedades · Av. Luis María Campos 1381, Palermo, CABA</p>
   <p class="cred">Diseño web por <a href="https://wa.me/5491100000000?text=%C2%A1Hola%21%20Vi%20una%20web%20que%20hicieron%20y%20quiero%20una%20para%20mi%20negocio." target="_blank" rel="noopener">TuMarca Webs</a></p>
 </div></footer>
 <a class="fab mag" href="tel:+541147867644" aria-label="Hablar con un asesor"><svg class="ico" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /> </svg></a>
